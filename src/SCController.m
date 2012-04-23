@@ -140,12 +140,12 @@ static AGRegex *regex;
 - (IBAction)browse:(id)sender;
 {	
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
-	int result = [openPanel runModalForDirectory:nil file:nil types:nil];
+	int result = [openPanel runModal];
 	
 	if (NSOKButton == result) {
 		[self clear:self];
 		[self setCanExecute:NO];
-		[self setWSDLURLString:[openPanel filename]];
+		[self setWSDLURLString:[[openPanel URL] path]];
 		[self parseWSDL:self];
 	}
 }
