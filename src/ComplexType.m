@@ -225,7 +225,7 @@ static NSString * const MethodXQuery = @"//*:fakeMethodName/*";
 {
 	if (newOrder != propOrder) {
 		[propOrder autorelease];
-		propOrder = [newOrder retain];
+		propOrder = (NSMutableArray *)[newOrder retain];
 	}
 }
 

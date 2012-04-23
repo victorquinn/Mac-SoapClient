@@ -318,7 +318,7 @@ leave:
 {
 	if (newMsg != errorMessage) {
 		[errorMessage autorelease];
-		errorMessage = [newMsg retain];
+		errorMessage = (NSMutableString *)[newMsg retain];
 	}
 }
 
